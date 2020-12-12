@@ -1,0 +1,342 @@
+question 1
+Question 1 Use IF ELSE and ELIF to write a program in python for your Report Cards.
+
+In [17]:
+class Student:
+    def __init__(self):
+
+       self.__roll=0
+
+       self.__name=""
+
+       self.__marks=[]
+
+       self.__total=0
+
+       self.__per=0
+
+       self.__grade=""
+
+       self.__result=""
+
+    def setStudent(self):
+
+       self.__roll=int(input("Enter Roll: "))
+
+       self.__name=input("Enter Name: ")
+
+       print("Enter marks of 5 subjects: ")
+
+       for i in range(5):
+
+           self.__marks.append(int(input("Subject "+str(i+1)+": ")))    
+
+    def total(self):
+
+       for x in self.__marks:
+
+           self.__total+=x    
+
+    def percentage(self):
+
+       self.__per=self.__total/5    
+    def calculateGrade(self):
+
+       if self.__per>=85:
+
+           self.__grade="S"
+
+       elif self.__per>=75:
+
+           self.__grade="A"
+
+       elif self.__per>=65:
+
+           self.__grade="B"
+
+       elif self.__per>=55:
+
+           self.__grade="C"
+
+       elif self.__per>=50:
+
+           self.__grade="D"
+
+       else:
+
+           self.__grade="F"    
+
+    def calculateResult(self):
+
+       count=0
+
+       for x in self.__marks:
+
+           if x>=50:
+
+               count+=1
+
+       if count==5:
+
+           self.__result="PASS"
+
+       elif count>=3:
+
+           self.__result="COMP."
+
+       else:
+
+           self.__result="FAIL"    
+
+    def showStudent(self):
+
+       self.total()
+
+       self.percentage()
+
+       self.calculateGrade()
+
+       self.calculateResult()       
+       print(self.__roll,"\t\t",self.__name,"\t\t",self.__total,"\t\t",self.__per,"\t\t",self.__grade,"\t\t",self.__result)
+    def main():
+        s=Student()
+        s.setStudent()
+        s.showStudent()
+if __name__=="__main__":
+    main()
+Enter Roll: 025
+Enter Name: Ravi
+Enter marks of 5 subjects: 
+Subject 1: 98
+Subject 2: 99
+Subject 3: 99
+Subject 4: 100
+Subject 5: 100
+25 		 Ravi 		 496 		 99.2 		 S 		 PASS
+question 2
+Question 2 Use For Loop to Print Prime Numbers in between 1 to 1000
+
+In [18]:
+Number = 1
+while(Number <= 100):
+    count = 0
+    i = 2
+    
+    while(i <= Number//2):
+        if(Number % i == 0):
+            count = count + 1
+            break
+        i = i + 1
+
+    if (count == 0 and Number != 1):
+        print(" %d" %Number, end = '  ')
+    Number = Number  + 1
+ 2   3   5   7   11   13   17   19   23   29   31   37   41   43   47   53   59   61   67   71   73   79   83   89   97  
+question 3
+Question 3 Write a program for printing the tables from 1,10 using Nested For Loop
+
+In [19]:
+for i in range(1,11):
+    print("\n\nMULTIPLICATION TABLE FOR %d\n" %(i))
+    for j in range(1,11):
+        print("%-5d X %5d = %5d" % (i, j, i*j))
+
+MULTIPLICATION TABLE FOR 1
+
+1     X     1 =     1
+1     X     2 =     2
+1     X     3 =     3
+1     X     4 =     4
+1     X     5 =     5
+1     X     6 =     6
+1     X     7 =     7
+1     X     8 =     8
+1     X     9 =     9
+1     X    10 =    10
+
+
+MULTIPLICATION TABLE FOR 2
+
+2     X     1 =     2
+2     X     2 =     4
+2     X     3 =     6
+2     X     4 =     8
+2     X     5 =    10
+2     X     6 =    12
+2     X     7 =    14
+2     X     8 =    16
+2     X     9 =    18
+2     X    10 =    20
+
+
+MULTIPLICATION TABLE FOR 3
+
+3     X     1 =     3
+3     X     2 =     6
+3     X     3 =     9
+3     X     4 =    12
+3     X     5 =    15
+3     X     6 =    18
+3     X     7 =    21
+3     X     8 =    24
+3     X     9 =    27
+3     X    10 =    30
+
+
+MULTIPLICATION TABLE FOR 4
+
+4     X     1 =     4
+4     X     2 =     8
+4     X     3 =    12
+4     X     4 =    16
+4     X     5 =    20
+4     X     6 =    24
+4     X     7 =    28
+4     X     8 =    32
+4     X     9 =    36
+4     X    10 =    40
+
+
+MULTIPLICATION TABLE FOR 5
+
+5     X     1 =     5
+5     X     2 =    10
+5     X     3 =    15
+5     X     4 =    20
+5     X     5 =    25
+5     X     6 =    30
+5     X     7 =    35
+5     X     8 =    40
+5     X     9 =    45
+5     X    10 =    50
+
+
+MULTIPLICATION TABLE FOR 6
+
+6     X     1 =     6
+6     X     2 =    12
+6     X     3 =    18
+6     X     4 =    24
+6     X     5 =    30
+6     X     6 =    36
+6     X     7 =    42
+6     X     8 =    48
+6     X     9 =    54
+6     X    10 =    60
+
+
+MULTIPLICATION TABLE FOR 7
+
+7     X     1 =     7
+7     X     2 =    14
+7     X     3 =    21
+7     X     4 =    28
+7     X     5 =    35
+7     X     6 =    42
+7     X     7 =    49
+7     X     8 =    56
+7     X     9 =    63
+7     X    10 =    70
+
+
+MULTIPLICATION TABLE FOR 8
+
+8     X     1 =     8
+8     X     2 =    16
+8     X     3 =    24
+8     X     4 =    32
+8     X     5 =    40
+8     X     6 =    48
+8     X     7 =    56
+8     X     8 =    64
+8     X     9 =    72
+8     X    10 =    80
+
+
+MULTIPLICATION TABLE FOR 9
+
+9     X     1 =     9
+9     X     2 =    18
+9     X     3 =    27
+9     X     4 =    36
+9     X     5 =    45
+9     X     6 =    54
+9     X     7 =    63
+9     X     8 =    72
+9     X     9 =    81
+9     X    10 =    90
+
+
+MULTIPLICATION TABLE FOR 10
+
+10    X     1 =    10
+10    X     2 =    20
+10    X     3 =    30
+10    X     4 =    40
+10    X     5 =    50
+10    X     6 =    60
+10    X     7 =    70
+10    X     8 =    80
+10    X     9 =    90
+10    X    10 =   100
+question 4
+Question 4 Write a program to Print X Prime Numbers using While Loop starting from 0, and take the INput of X from the user
+
+In [20]:
+second = int(input("Enter the Second Number:"))
+for i in range(1, second):
+    for j in range(2, i//2):
+        if i % j == 0:
+            break
+    else:
+        print("Prime Number", i)
+Enter the Second Number:223
+Prime Number 1
+Prime Number 2
+Prime Number 3
+Prime Number 4
+Prime Number 5
+Prime Number 7
+Prime Number 11
+Prime Number 13
+Prime Number 17
+Prime Number 19
+Prime Number 23
+Prime Number 29
+Prime Number 31
+Prime Number 37
+Prime Number 41
+Prime Number 43
+Prime Number 47
+Prime Number 53
+Prime Number 59
+Prime Number 61
+Prime Number 67
+Prime Number 71
+Prime Number 73
+Prime Number 79
+Prime Number 83
+Prime Number 89
+Prime Number 97
+Prime Number 101
+Prime Number 103
+Prime Number 107
+Prime Number 109
+Prime Number 113
+Prime Number 127
+Prime Number 131
+Prime Number 137
+Prime Number 139
+Prime Number 149
+Prime Number 151
+Prime Number 157
+Prime Number 163
+Prime Number 167
+Prime Number 173
+Prime Number 179
+Prime Number 181
+Prime Number 191
+Prime Number 193
+Prime Number 197
+Prime Number 199
+Prime Number 211
